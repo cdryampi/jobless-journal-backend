@@ -1,0 +1,30 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "npx nodemon server.js",
+    "start": "node server.js",
+    "docker:build": "docker build -t jobless-journal-backend .",
+    "docker:run": "docker run -p 3001:3001 --env-file .env jobless-journal-backend",
+    "docker:compose": "docker-compose up --build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.49.8",
+    "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
+    "express": "^4.19.2",
+    "gray-matter": "^4.0.3",
+    "marked": "^15.0.12",
+    "openai": "^4.103.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}

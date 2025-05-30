@@ -1,0 +1,25 @@
+{
+  "name": "jobless-journal-backend",
+  "description": "Backend del Jobless Journal - API para gestión de posts y comentarios",
+  "dockerfile": "Dockerfile",
+  "buildContext": ".",
+  "port": 3001,
+  "healthCheck": {
+    "path": "/api/health",
+    "interval": 30,
+    "timeout": 10,
+    "retries": 3
+  },
+  "env": {
+    "NODE_ENV": "production",
+    "PORT": "3001"
+  },
+  "volumes": [
+    {
+      "source": "./posts",
+      "target": "/app/posts",
+      "readOnly": true
+    }
+  ],
+  "restart": "unless-stopped"
+}
